@@ -39,6 +39,20 @@ it allows you to place blocks of elements or molecules from test tubes, by defau
 
 + Fixed a bug where if you right-click on a block while holding a test tube of an element/molecule several times in the same place, the test tubes will be wasted. Now you cannot place an element/molecule block if it is already there.
 
+
+
+https://github.com/kotmatross28729/Minechem-5-continuation/assets/110309314/0a09a9b5-170e-436f-afba-c9be10a9cf49
+
+
+
+
+https://github.com/kotmatross28729/Minechem-5-continuation/assets/110309314/78a0fc37-506b-4751-b6db-d77f8d8d05d5
+
+
+
+
+
+
 ### Current TODO:
 
 + ability to specify the color of the molecule in minetweaker
