@@ -1,4 +1,6 @@
 # Minechem 5 continuation
+## REQUIRES COFH CORE TO WORK!
+
 ### this is a fork of [DrParadox7/Minechem](https://github.com/DrParadox7/Minechem) which is a fork of [iopleke/Minechem](https://github.com/iopleke/Minechem)
 
 ##### WARNING: the author doesn't know how to normal format repository on github!
