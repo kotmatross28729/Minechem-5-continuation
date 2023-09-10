@@ -1,10 +1,7 @@
 package minechem.container;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import minechem.slot.SlotFake;
 import net.minecraft.entity.player.EntityPlayer;
@@ -76,9 +73,9 @@ public class ContainerWithFakeSlots extends Container
         }
         return 0;
     }
-    private List<Slot> slotsDragged = new ArrayList<>();
+    private Set<Slot> slotsDragged = new LinkedHashSet<>();
 
-    public List<Slot> getSlotsDragged() {
+    public Set<Slot> getSlotsDragged() {
         return slotsDragged;
     }
 
