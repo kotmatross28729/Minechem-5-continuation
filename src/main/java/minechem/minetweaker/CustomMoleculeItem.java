@@ -45,7 +45,6 @@ public class CustomMoleculeItem extends MoleculeItem {
 
         RadiationEnum radioactivity = RadiationInfo.getRadioactivity(itemstack);
         String radioactivityColor = radioactivity.getColour();
-
         String radioactiveName = MinechemUtil.getLocalString("element.property." + radioactivity.name(), true);
         String timeLeft = "";
         if (RadiationInfo.getRadioactivity(itemstack) != RadiationEnum.stable && itemstack.getTagCompound() != null) {
@@ -58,16 +57,21 @@ public class CustomMoleculeItem extends MoleculeItem {
         if (PharmacologyEffectRegistry.hasEffect(molecule) && Settings.displayMoleculeEffects) {
             if (PolytoolHelper.getTypeFromElement(ElementItem.getElement(itemstack), 1) != null) {
                 // Polytool Detail
-                if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+                /*if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
                     for (PharmacologyEffect effect : PharmacologyEffectRegistry.getEffects(molecule)) {
                         list.add(effect.getColour() + effect.toString());
                     }
-                }
+                }*/
             }
-            if (!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) && !Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+            if (PharmacologyEffectRegistry.hasEffect(CustomMoleculeItem.getMolecule(itemstack))){
+                //if (!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) && !Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+                list.add(EnumColour.DARK_GREEN + MinechemUtil.getLocalString("effect.information", true));
+                //}
+            }
+            if (PharmacologyEffectRegistry.hasEffect(molecule)){
                 list.add(EnumColour.DARK_GREEN + MinechemUtil.getLocalString("effect.information", true));
             }
-        }
+            }
 
     }
 

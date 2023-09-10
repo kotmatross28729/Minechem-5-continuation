@@ -11,68 +11,76 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class ContainerWithFakeSlots extends Container
-{
+public class ContainerWithFakeSlots extends Container {
+
+    private static Field field_94536_g;
+    private static Field field_94535_f;
+    private static Field field_94537_h;
+
+    static {
+        try {
+            field_94536_g = Container.class.getDeclaredField("field_94536_g");
+            field_94536_g.setAccessible(true);
+            field_94535_f = Container.class.getDeclaredField("field_94535_f");
+            field_94535_f.setAccessible(true);
+            field_94537_h = Container.class.getDeclaredField("field_94537_h");
+            field_94537_h.setAccessible(true);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void setField_94536_g(Container container, int value) {
         try {
-            Field field = Container.class.getDeclaredField("field_94536_g");
-            field.setAccessible(true);
-            field.setInt(container, value);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+            field_94536_g.setInt(container, value);
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
     }
 
     public int getField_94536_g(Container container) {
         try {
-            Field field = Container.class.getDeclaredField("field_94536_g");
-            field.setAccessible(true);
-            return field.getInt(container);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+            return field_94536_g.getInt(container);
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
+            return 0;
         }
-        return 0;
     }
+
     public void setField_94535_f(Container container, int value) {
         try {
-            Field field = Container.class.getDeclaredField("field_94535_f");
-            field.setAccessible(true);
-            field.setInt(container, value);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+            field_94535_f.setInt(container, value);
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
     }
 
     public int getField_94535_f(Container container) {
         try {
-            Field field = Container.class.getDeclaredField("field_94535_f");
-            field.setAccessible(true);
-            return field.getInt(container);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+            return field_94535_f.getInt(container);
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
+            return 0;
         }
-        return 0;
     }
+
     public void setField_94537_h(Container container, int value) {
         try {
-            Field field = Container.class.getDeclaredField("field_94537_h");
-            field.setAccessible(true);
-            field.setInt(container, value);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+            field_94537_h.setInt(container, value);
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
     }
 
     public int getField_94537_h(Container container) {
         try {
-            Field field = Container.class.getDeclaredField("field_94537_h");
-            field.setAccessible(true);
-            return field.getInt(container);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
+            return field_94537_h.getInt(container);
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
+            return 0;
         }
-        return 0;
     }
+
     private Set<Slot> slotsDragged = new LinkedHashSet<>();
 
     public Set<Slot> getSlotsDragged() {

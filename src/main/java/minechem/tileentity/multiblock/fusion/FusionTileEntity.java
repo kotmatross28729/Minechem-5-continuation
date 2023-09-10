@@ -168,12 +168,17 @@ public class FusionTileEntity extends MultiBlockTileEntity implements ISidedInve
         {
             if (!canProcess)
             {
-                if (this.getEnergyNeeded() < this.getEnergyStored() && inputsCanBeFused() && canOutput())
+                if ((Settings.powerUseEnabled || this.getEnergyNeeded() <= this.getEnergyStored())
+                    && inputsCanBeFused() && canOutput())
+                {
+                    canProcess = true;
+                }
+                if ((!Settings.powerUseEnabled && inputsCanBeFused() && canOutput()))
                 {
                     canProcess = true;
                 }
             }
-            if (canProcess && this.useEnergy(this.getEnergyNeeded()))
+            if (canProcess && (!Settings.powerUseEnabled || this.useEnergy(this.getEnergyNeeded())))
             {
                 fuseInputs();
                 removeInputs();
@@ -186,6 +191,7 @@ public class FusionTileEntity extends MultiBlockTileEntity implements ISidedInve
             MessageHandler.INSTANCE.sendToAllAround(message, new NetworkRegistry.TargetPoint(worldObj.provider.dimensionId, this.xCoord, this.yCoord, this.zCoord, Settings.UpdateRadius));
         }
     }
+
 
     public boolean canOutput()
     {

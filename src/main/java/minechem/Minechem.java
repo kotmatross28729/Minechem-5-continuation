@@ -43,7 +43,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION_FULL, useMetadata = false, guiFactory = "minechem.gui.GuiFactory", acceptedMinecraftVersions = "[1.7.10,)", dependencies = "required-after:Forge@[10.13.3.1360,)")
+@Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION_FULL, useMetadata = false, guiFactory = "minechem.gui.GuiFactory", acceptedMinecraftVersions = "[1.7.10,)", dependencies = "required-after:Forge@[10.13.4.1614,);required-after:CoFHCore@[1.7.10R3.1.4,);")
 public class Minechem
 {
     public static boolean isCoFHAAPILoaded;
@@ -100,8 +100,7 @@ public class Minechem
         MinechemBlueprint.registerBlueprints();
 
         GameRegistry.registerFuelHandler(new MinechemFuelHandler());
-
-        FMLInterModComms.sendMessage("OpenBlocks", "donateUrl", "http://jakimfett.com/patreon/");
+        //FMLInterModComms.sendMessage("OpenBlocks", "donateUrl", "http://jakimfett.com/patreon/");
     }
 
     @EventHandler
