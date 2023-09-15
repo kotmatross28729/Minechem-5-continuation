@@ -201,7 +201,7 @@ public class Settings
         configList.add(prop.getName());
 
         prop = config.get("power", "recursiveDepth", Settings.recursiveDepth);
-        prop.setMinValue(3).setMaxValue(20).requiresMcRestart();
+        prop.setMinValue(1).setMaxValue(100).requiresMcRestart();
         prop.comment = StatCollector.translateToLocal("config.recursiveDepth.description");
         prop.setLanguageKey("config.recursiveDepth.name");
         recursiveDepth = prop.getInt();
