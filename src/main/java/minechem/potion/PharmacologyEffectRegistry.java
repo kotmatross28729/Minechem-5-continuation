@@ -11,14 +11,14 @@ import net.minecraft.entity.EntityLivingBase;
 
 public class PharmacologyEffectRegistry
 {
-    private static Map<MoleculeEnum, List<PharmacologyEffect>> effects = new HashMap<MoleculeEnum, List<PharmacologyEffect>>();
+    private static final Map<MoleculeEnum, List<PharmacologyEffect>> effects = new HashMap<>();
 
     public static void addEffect(MoleculeEnum molecule, PharmacologyEffect effect)
     {
         List<PharmacologyEffect> list = effects.get(molecule);
         if (list == null)
         {
-            list = new LinkedList<PharmacologyEffect>();
+            list = new LinkedList<>();
         }
         for (PharmacologyEffect existingEffect : list)
         {
@@ -90,11 +90,12 @@ public class PharmacologyEffectRegistry
         addEffect(MoleculeEnum.xylitol, new PharmacologyEffect.Food(6, .2F));
         addEffect(MoleculeEnum.sucrose, new PharmacologyEffect.Potion("moveSpeed", 1, 20));
         addEffect(MoleculeEnum.sucrose, new PharmacologyEffect.Food(1, .1F));
-        addEffect(MoleculeEnum.mycotoxin, new PharmacologyEffect.Potion("wither", 7, 8));
+        //addEffect(MoleculeEnum.mycotoxin, new PharmacologyEffect.Potion("wither", 7, 8));
+        addEffect(MoleculeEnum.mycotoxin, new PharmacologyEffect.Potion(20, 7, 8));
         addEffect(MoleculeEnum.mycotoxin, new PharmacologyEffect.Potion("weakness", 1, 12));
         addEffect(MoleculeEnum.ethanol, new PharmacologyEffect.Potion("confusion", 5, 30));
         addEffect(MoleculeEnum.ethanol, new PharmacologyEffect.Food(1, .1F));
-        addEffect(MoleculeEnum.cyanide, new PharmacologyEffect.Potion("wither", 3, 40));
+        addEffect(MoleculeEnum.cyanide, new PharmacologyEffect.Potion(20, 3, 40));
         addEffect(MoleculeEnum.penicillin, new PharmacologyEffect.Cure());
         addEffect(MoleculeEnum.penicillin, new PharmacologyEffect.Potion("regeneration", 3, 40));
         addEffect(MoleculeEnum.testosterone, new PharmacologyEffect.Potion("damageBoost", 20));
@@ -120,7 +121,7 @@ public class PharmacologyEffectRegistry
         addEffect(MoleculeEnum.hist, new PharmacologyEffect.Cure());
         addEffect(MoleculeEnum.hist, new PharmacologyEffect.Potion("confusion", 5, 20));
         addEffect(MoleculeEnum.pal2, new PharmacologyEffect.Potion("moveSlowdown", 7, 5));
-        addEffect(MoleculeEnum.pal2, new PharmacologyEffect.Potion("wither", 5));
+        addEffect(MoleculeEnum.pal2, new PharmacologyEffect.Potion(20, 5));
         addEffect(MoleculeEnum.theobromine, new PharmacologyEffect.Potion("digSpeed", 5, 30));
         addEffect(MoleculeEnum.theobromine, new PharmacologyEffect.Potion("moveSpeed", 5, 30));
         addEffect(MoleculeEnum.retinol, new PharmacologyEffect.Potion("nightVision", 5, 30));
@@ -167,10 +168,10 @@ public class PharmacologyEffectRegistry
         addEffect(MoleculeEnum.metblue, new PharmacologyEffect.Potion("regeneration", 4, 30));
         addEffect(MoleculeEnum.metblue, new PharmacologyEffect.Potion("weakness", 4, 30));
         addEffect(MoleculeEnum.meoh, new PharmacologyEffect.Potion("blindness", 6, 20));
-        addEffect(MoleculeEnum.meoh, new PharmacologyEffect.Potion("wither", 2, 10));
+        addEffect(MoleculeEnum.meoh, new PharmacologyEffect.Potion(20, 2, 10));
         addEffect(MoleculeEnum.radchlor, new PharmacologyEffect.Potion("weakness", 6, 120));
         addEffect(MoleculeEnum.radchlor, new PharmacologyEffect.Potion("poison", 6, 20));
-        addEffect(MoleculeEnum.radchlor, new PharmacologyEffect.Potion("wither", 1, 30));
+        addEffect(MoleculeEnum.radchlor, new PharmacologyEffect.Potion(20, 1, 30));
         addEffect(MoleculeEnum.caulerpenyne, new PharmacologyEffect.Potion("weakness", 6, 2));
         addEffect(MoleculeEnum.caulerpenyne, new PharmacologyEffect.Potion("confusion", 4, 2));
         addEffect(MoleculeEnum.latropine, new PharmacologyEffect.Damage(4));

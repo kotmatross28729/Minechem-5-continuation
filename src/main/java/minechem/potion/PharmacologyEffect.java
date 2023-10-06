@@ -214,10 +214,11 @@ public abstract class PharmacologyEffect
             return potionId;
         }
 
-        public Potion(String potionName, int power, int duration)
-        {
-            this(PotionHelper.getPotionByName(potionName).getId(), power, duration);
+        public Potion(String potionName, int power, int duration) {
+                this(PotionHelper.getPotionByName(potionName).getId(), power, duration);
         }
+
+
 
         public Potion(String potionName, int duration)
         {
